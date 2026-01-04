@@ -1,0 +1,350 @@
+/*
+ * Lung Cancer Detection Application - Stylesheet
+ * Theme: Medical Blue & Clean White
+ * 
+ * Color Palette:
+ * - Primary Blue:     #007AFF
+ * - Primary Dark:     #0056CC
+ * - Success Green:    #28A745
+ * - Danger Red:       #DC3545
+ * - Warning Orange:   #FFC107
+ * - Background:       #FFFFFF
+ * - Sidebar BG:       #F8F9FA
+ * - Text Primary:     #212529
+ * - Text Secondary:   #6C757D
+ * - Border:           #DEE2E6
+ */
+
+/* ============================================================
+   GLOBAL STYLES
+   ============================================================ */
+
+* {
+    font-family: "Segoe UI", "Arial", sans-serif;
+    font-size: 13px;
+}
+
+QMainWindow#MainWindow {
+    background-color: #FFFFFF;
+}
+
+QWidget#CentralWidget {
+    background-color: #FFFFFF;
+}
+
+/* ============================================================
+   SIDEBAR
+   ============================================================ */
+
+QFrame#Sidebar {
+    background-color: #F8F9FA;
+    border: none;
+    border-right: 1px solid #DEE2E6;
+}
+
+QFrame#Sidebar QLabel {
+    color: #212529;
+    background: transparent;
+}
+
+/* Logo Section */
+QLabel#LogoIcon {
+    font-size: 56px;
+    padding: 10px;
+}
+
+QLabel#AppTitle {
+    color: #007AFF;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+}
+
+QLabel#AppSubtitle {
+    color: #6C757D;
+    font-size: 11px;
+    font-weight: normal;
+}
+
+/* Separator Line */
+QFrame#Separator {
+    background-color: #DEE2E6;
+    border: none;
+    max-height: 1px;
+}
+
+/* Info Label */
+QLabel#InfoLabel {
+    color: #6C757D;
+    font-size: 11px;
+    padding: 15px 10px;
+    background-color: #E9ECEF;
+    border-radius: 8px;
+}
+
+/* Status Label */
+QLabel#StatusLabel {
+    color: #28A745;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 10px 15px;
+    background-color: #D4EDDA;
+    border: 1px solid #C3E6CB;
+    border-radius: 8px;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+
+/* Primary Button - Select Image */
+QPushButton#BtnSelectImage {
+    background-color: #007AFF;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 14px 24px;
+    min-height: 50px;
+}
+
+QPushButton#BtnSelectImage:hover {
+    background-color: #0056CC;
+}
+
+QPushButton#BtnSelectImage:pressed {
+    background-color: #004099;
+}
+
+QPushButton#BtnSelectImage:disabled {
+    background-color: #6C757D;
+    color: #ADB5BD;
+}
+
+/* Secondary Button - Exit */
+QPushButton#BtnExit {
+    background-color: transparent;
+    color: #6C757D;
+    border: 1px solid #DEE2E6;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px 20px;
+    min-height: 40px;
+}
+
+QPushButton#BtnExit:hover {
+    background-color: #E9ECEF;
+    color: #212529;
+    border-color: #ADB5BD;
+}
+
+QPushButton#BtnExit:pressed {
+    background-color: #DEE2E6;
+}
+
+/* ============================================================
+   CONTENT AREA
+   ============================================================ */
+
+QFrame#ContentArea {
+    background-color: #FFFFFF;
+    border: none;
+}
+
+/* Section Cards */
+QFrame#PreviewSection,
+QFrame#ResultSection {
+    background-color: #FFFFFF;
+    border: 1px solid #DEE2E6;
+    border-radius: 12px;
+}
+
+QLabel#SectionTitle {
+    color: #212529;
+    font-size: 14px;
+    font-weight: 600;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #007AFF;
+}
+
+/* ============================================================
+   PREVIEW AREA
+   ============================================================ */
+
+QLabel#PreviewLabel {
+    background-color: #F8F9FA;
+    border: 2px dashed #DEE2E6;
+    border-radius: 10px;
+    color: #6C757D;
+    font-size: 14px;
+    qproperty-alignment: AlignCenter;
+}
+
+QLabel#PreviewLabel:hover {
+    border-color: #007AFF;
+    background-color: #F0F7FF;
+}
+
+QLabel#PreviewLabel[hasImage="true"] {
+    border: 2px solid #007AFF;
+    background-color: #FFFFFF;
+}
+
+QLabel#ImageInfoLabel {
+    color: #6C757D;
+    font-size: 11px;
+    padding: 5px;
+}
+
+/* ============================================================
+   RESULT AREA
+   ============================================================ */
+
+QLabel#ResultLabel {
+    color: #6C757D;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+QLabel#DiagnosisResult {
+    color: #212529;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px 0;
+}
+
+/* Normal result - Green */
+QLabel#DiagnosisResult[result="normal"] {
+    color: #28A745;
+}
+
+/* Abnormal result - Red */
+QLabel#DiagnosisResult[result="abnormal"] {
+    color: #DC3545;
+}
+
+/* Error result - Red */
+QLabel#DiagnosisResult[result="error"] {
+    color: #DC3545;
+}
+
+QLabel#ConfidenceText {
+    color: #007AFF;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* ============================================================
+   PROGRESS BAR
+   ============================================================ */
+
+QProgressBar#ConfidenceBar {
+    background-color: #E9ECEF;
+    border: none;
+    border-radius: 10px;
+    min-height: 20px;
+    max-height: 20px;
+    text-align: center;
+}
+
+QProgressBar#ConfidenceBar::chunk {
+    background-color: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 0,
+        stop: 0 #007AFF,
+        stop: 1 #00C6FF
+    );
+    border-radius: 10px;
+}
+
+/* High confidence (>70%) - Green gradient */
+QProgressBar#ConfidenceBar[confidence="high"]::chunk {
+    background-color: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 0,
+        stop: 0 #28A745,
+        stop: 1 #20C997
+    );
+}
+
+/* Medium confidence (40-70%) - Orange gradient */
+QProgressBar#ConfidenceBar[confidence="medium"]::chunk {
+    background-color: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 0,
+        stop: 0 #FFC107,
+        stop: 1 #FFD93D
+    );
+}
+
+/* Low confidence (<40%) - Red gradient */
+QProgressBar#ConfidenceBar[confidence="low"]::chunk {
+    background-color: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 0,
+        stop: 0 #DC3545,
+        stop: 1 #FF6B6B
+    );
+}
+
+/* ============================================================
+   SCROLLBAR (nếu cần)
+   ============================================================ */
+
+QScrollBar:vertical {
+    background-color: #F8F9FA;
+    width: 10px;
+    border-radius: 5px;
+}
+
+QScrollBar::handle:vertical {
+    background-color: #CED4DA;
+    border-radius: 5px;
+    min-height: 30px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background-color: #ADB5BD;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0;
+}
+
+/* ============================================================
+   MESSAGE BOX
+   ============================================================ */
+
+QMessageBox {
+    background-color: #FFFFFF;
+}
+
+QMessageBox QLabel {
+    color: #212529;
+    font-size: 13px;
+}
+
+QMessageBox QPushButton {
+    background-color: #007AFF;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 20px;
+    min-width: 80px;
+}
+
+QMessageBox QPushButton:hover {
+    background-color: #0056CC;
+}
+
+/* ============================================================
+   TOOLTIPS
+   ============================================================ */
+
+QToolTip {
+    background-color: #212529;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 10px;
+    font-size: 12px;
+}
